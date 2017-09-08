@@ -1,7 +1,7 @@
 Fish Weight Simulation
 
 Fish weight growth can be modeled as function of species' biophysical
-characteristics and ambient water temperature. Given a particular weight of a
+characteristics and ambient water temperature. Given the current weight of a
 fish (`weight_cur`), the new weight for a day's worth of growth in Alaskan
 Salmon can be calculated as
 
