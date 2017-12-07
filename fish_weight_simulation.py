@@ -106,18 +106,20 @@ def read_data(data_file):
     with open(data_file, 'r') as file:
         # this is standard text file reading procedure
         data = file.read()
-        data = data.split('\n')
 
-        # remove empty entries
-        # for ex. very often the last line is empty due to windows/linux
-        # last empty line convention
-        data = filter(bool, data)
-        labels = data[0].split(',')
-        data = [d.split(',') for d in data[1:]]
+    # extract and transform data steps
+    data = data.split('\n')
 
-        temperatures = map(float, [d[2] for d in data])
+    # remove empty entries
+    # for ex. very often the last line is empty due to windows/linux
+    # last empty line convention
+    data = filter(bool, data)
+    labels = data[0].split(',')
+    data = [d.split(',') for d in data[1:]]
 
-        return temperatures
+    temperatures = map(float, [d[2] for d in data])
+
+    return temperatures
 
 
 def check_sanity(data):
